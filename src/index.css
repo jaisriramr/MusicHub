@@ -1,9 +1,84 @@
 :root {
+  --primary-clr: #259759;
 }
 
 body {
   background-color: #111111;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.auth-navbar {
+  height: 64px;
+  padding: 0 100px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.auth-nav-logo {
+  height: 42px;
+  width: auto;
+}
+
+.auth-main {
+  width: 320px;
+  margin: auto;
+}
+
+.auth-main h1 {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.auth-form-controller {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.auth-input {
+  height: 36px;
+}
+
+.auth-btn {
+  height: 36px;
+  border-radius: 50px;
+  margin-top: 16px;
+  margin-bottom: 5px;
+  background-color: #259759 !important;
+}
+
+.auth-redirect-label {
+  color: #999 !important;
+}
+
+.auth-redirect-label a {
+  color: white;
+}
+
+.auth-btn:hover {
+  background-color: #187c45 !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .auth-navbar {
+    padding: 0 20px !important;
+  }
 }
