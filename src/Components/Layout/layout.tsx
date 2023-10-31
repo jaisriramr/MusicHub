@@ -13,6 +13,7 @@ import Artist from "../../Pages/Artist/artist";
 import Album from "../../Pages/Album/album";
 import Player from "../Player/player";
 import "./layout.css";
+import PrivateRoute from "./protected-route";
 
 const Layout = () => {
   return (
@@ -21,12 +22,14 @@ const Layout = () => {
         <Sidebar />
         <main className="layout-main">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/track/:id" element={<Track />} />
-            <Route path="/playlist/:id" element={<Playlist />} />
-            <Route path="/artist/:id" element={<Artist />} />
-            <Route path="/album/:id" element={<Album />} />
+            <Route path="/" element={<PrivateRoute />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/track/:id" element={<Track />} />
+              <Route path="/playlist/:id" element={<Playlist />} />
+              <Route path="/artist/:id" element={<Artist />} />
+              <Route path="/album/:id" element={<Album />} />
+            </Route>
           </Routes>
         </main>
       </header>

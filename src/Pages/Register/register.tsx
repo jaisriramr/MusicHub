@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import "./register.css";
 import MusicHubLogo from "../../assets/musichub-logo.png";
 import { container } from "tsyringe";
@@ -7,7 +7,7 @@ import Button from "antd/lib/button";
 import Input from "antd/lib/input";
 import Select from "antd/lib/select";
 import message from "antd/lib/message";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const Register = () => {
   const userService = container.resolve(UserService);
@@ -20,6 +20,14 @@ const Register = () => {
     year: "",
     gender: undefined,
   });
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      let token: any = localStorage.getItem("token");
+      userService.verify(token).then((response) => {
+        <Navigate to="/" />;
+      });
+    }
+  }, []);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();

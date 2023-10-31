@@ -26,6 +26,12 @@ export class UserService {
     return await this.httpService.post(`${this.namespace}/login`, loginUser);
   };
 
+  verify = async (token: string) => {
+    return await this.httpService.get(
+      `${this.namespace}/verify?token=${token}`
+    );
+  };
+
   getProfile = async (email: string) => {
     return await this.httpService.get(
       `${this.namespace}/profile?email=${email}`
