@@ -3,6 +3,7 @@ import {
   RouterProvider,
   Routes,
   createBrowserRouter,
+  useParams,
 } from "react-router-dom";
 import Sidebar from "../Sidebar/sidebar";
 import Home from "../../Pages/Home/home";
@@ -26,7 +27,7 @@ const Layout = () => {
               <Route path="/" element={<Home />} />
               <Route path="/search" element={<Search />} />
               <Route path="/track/:id" element={<Track />} />
-              <Route path="/playlist/:id" element={<Playlist />} />
+              <Route path="/playlist/:playlist_id" element={<Playlist />} />
               <Route path="/artist/:id" element={<Artist />} />
               <Route path="/album/:id" element={<Album />} />
             </Route>
